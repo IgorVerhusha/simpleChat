@@ -3,17 +3,15 @@ const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
-const PORT = process.env.PORT || 9999;
-let port = process.env.PORT;
-if (port == null || port == "") {
-  port = 9999;
-}
-app.listen(port, function() {
-  console.log("Listening on " + port);
-});
-app.use(express.logger());
+
+
+
+let port = process.env.PORT ||  8000;
+
+
 app.use(express.json());
 app.use(express.urlencoded({extended: true}))
+
 
 const rooms = new Map();
 
@@ -72,7 +70,7 @@ io.on('connection', (socket) => {
 
 
 
-server.listen(9999, (err) => {
+server.listen(port, (err) => {
   if (err) {
     throw Error(err);
   }
