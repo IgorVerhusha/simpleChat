@@ -50,6 +50,7 @@ function App() {
   }, []);
 
   window.socket = socket;
+  
 
   return (
     <div className={"wrapper"}>

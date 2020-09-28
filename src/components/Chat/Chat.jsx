@@ -11,10 +11,12 @@ function Chat({ users, messages, roomId, userName, onAddMessage }) {
       userName,
       roomId,
       text: messageValue,
+      date: new Date().toLocaleString()
     });
     onAddMessage({
       userName,
       text: messageValue,
+      date: new Date().toLocaleString()
     });
     setMessageValue("");
       }
@@ -23,7 +25,6 @@ function Chat({ users, messages, roomId, userName, onAddMessage }) {
   React.useEffect(()=> {
      messagesRef.current.scrollTo(0, 99999);}, [messages]
   );
-
 
   return (
     <div className={classes.chat}>
@@ -47,6 +48,7 @@ function Chat({ users, messages, roomId, userName, onAddMessage }) {
                 <div className={classes.message} style={userName===message.userName ? {background: 'wheat', marginLeft: '60px', marginRight: '10px'} : {} }    >
                   <span>{message.text}</span>
                   <div className={classes.userName}>{message.userName}</div>
+                  <div className={classes.userName}>{message.date}</div>
                 </div>
               </div>
             ))}

@@ -40,11 +40,12 @@ io.on('connection', (socket) => {
     const users = [...rooms.get(roomId).get('users').values()];
     socket.to(roomId).broadcast.emit('ROOM:SET_USERS', users);
   });
-  socket.on('ROOM:NEW_MESSAGE', ({ roomId, userName, text
+  socket.on('ROOM:NEW_MESSAGE', ({ roomId, userName, text, date
   }) => {
     const message = {
       userName,
-      text
+      text,
+      date
     };
     rooms.get(roomId).get('messages').push(message);
     socket.to(roomId).broadcast.emit('ROOM:NEW_MESSAGE', message);
