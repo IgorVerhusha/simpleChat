@@ -24,22 +24,22 @@ function JoinBlock({ onLogin }) {
     <div>
       <div className={classes.joinBlock}>
         <div className={classes.inputForm}>
-          <div className="form-group">
-            <label htmlFor="formGroupExampleInput">Room ID</label>
+
+            <label>Room ID</label>
             <input
               type="text"
-              className={"form-control" + " " + classes.input}
+              className={ classes.input}
               id="formGroupExampleInput"
               placeholder="введите ID комнаты"
               value={roomId}
               onChange={(event) => setRoomId(event.target.value)}
             />
           </div>
-          <div className="form-group">
-            <label htmlFor="formGroupExampleInput2">Ваше имя</label>
+          <div>
+            <label>Ваше имя</label>
             <input
               type="text"
-              className={"form-control" + " " + classes.input}
+              className={classes.input}
               id="formGroupExampleInput2"
               placeholder="Введите ваше имя"
               value={userName}
@@ -50,13 +50,12 @@ function JoinBlock({ onLogin }) {
             disabled={isLoading}
             onClick={onEnter}
             type="button"
-            className="btn btn-success"
           >
             {isLoading ? "ВХОД..." : "ВОЙТИ"}
           </button>
         </div>
       </div>
-    </div>
+
   );
 }
 

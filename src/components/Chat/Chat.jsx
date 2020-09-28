@@ -54,17 +54,16 @@ function Chat({ users, messages, roomId, userName, onAddMessage }) {
             ))}
           </div>
           <div className={classes.chatInput}>
-            <div className="form-group">
+            <div >
               <textarea
-                className="form-control"
-                id="exampleFormControlTextarea1"
+
                 rows="3"
                 onChange={(event) => setMessageValue(event.target.value)}
                 value={messageValue}
               />
               <button
                 type="button"
-                className="btn btn-primary"
+
                 onClick={onSendMessage}
               >
                 Отправить
