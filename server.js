@@ -3,6 +3,15 @@ const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
+const PORT = process.env.PORT || 9999;
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 9999;
+}
+app.listen(port, function() {
+  console.log("Listening on " + port);
+});
+app.use(express.logger());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}))
 
