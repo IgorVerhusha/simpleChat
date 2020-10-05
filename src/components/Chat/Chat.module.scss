@@ -1,25 +1,46 @@
 .chat {
   display: flex;
   justify-content: center;
+  @media screen and (max-width: 992px) {
+    flex-direction: column;
+  }
   .chatContainer {
     margin-top: 30px;
     border: 0.1px solid darkgray;
     width: 700px;
     height: 600px;
     display: flex;
+    @media screen and (max-width: 992px) {
+      flex-direction: column;
+      width: 400px;
+      height: 750px;
+      margin-top: auto;
+    }
     .chatUsers {
       width: 200px;
       height: 598px;
       background-color: whitesmoke;
       text-align: center;
       padding-top: 20px;
+      @media screen and (max-width: 992px) {
+        width: 398px;
+        height: auto;
+      }
     }
     .chatDisplay {
       width: 500px;
       height: 599px;
+      @media screen and (max-width: 992px) {
+        width: 399px;
+        height: 460px;
+      }
       .chatMessages {
         height: 450px;
         overflow: auto;
+        @media screen and (max-width: 992px) {
+
+          height: 400px;
+        }
         .message {
           margin: 10px 50px 5px 10px;
           padding: 5px;
@@ -31,41 +52,10 @@
       }
       .chatInput {
         height: 149px;
+        @media screen and (max-width: 992px) {
+          width: 399px;
+        }
       }
     }
   }
 }
-//@media screen and (max-width: 992px) {
-//  .chat {
-//    display: flex;
-//    justify-content: center;
-//
-//    .chatContainer {
-//      margin-top: 30px;
-//      border: 0.1px solid darkgray;
-//      width: 300px;
-//      height: 600px;
-//      display: flex;
-//
-//      .chatUsers {
-//        width: 0px;
-//        height: 598px;
-//        background-color: whitesmoke;
-//        text-align: center;
-//      }
-//
-//      .chatDisplay {
-//        width: 300px;
-//        height: 599px;
-//
-//        .chatWindow {
-//          height: 450px;
-//        }
-//
-//        .chatInput {
-//          height: 149px;
-//        }
-//      }
-//    }
-//  }
-//}
